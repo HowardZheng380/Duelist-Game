@@ -6,8 +6,22 @@
     <title></title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="title-screen">
     <img class="title-logo" src="./assets/titleDA.png" alt="" />
+    <div class="start-prompt" aria-hidden="true">
+      <img class="prompt-frame frame-1" src="./assets/press-k-start/frame_01_on_100.png" alt="" />
+      <img class="prompt-frame frame-2" src="./assets/press-k-start/frame_02_fade_80.png" alt="" />
+      <img class="prompt-frame frame-3" src="./assets/press-k-start/frame_03_fade_60.png" alt="" />
+      <img class="prompt-frame frame-4" src="./assets/press-k-start/frame_04_fade_40.png" alt="" />
+      <img class="prompt-frame frame-5" src="./assets/press-k-start/frame_05_fade_20.png" alt="" />
+    </div>
+    <div class="map-selection-ui" aria-label="Map selection">
+      <img class="map-selection-title" src="./assets/map-selection-title.png" alt="" />
+      <button class="map-button map-button-top-left" type="button" aria-label="Select top left map"></button>
+      <button class="map-button map-button-top-right" type="button" aria-label="Select top right map"></button>
+      <button class="map-button map-button-bottom-left" type="button" aria-label="Select bottom left map"></button>
+      <button class="map-button map-button-bottom-right" type="button" aria-label="Select bottom right map"></button>
+    </div>
     <canvas id="game" width="1600" height="1000"></canvas>
     <script type="module" src="src/game.js"></script>
   </body>

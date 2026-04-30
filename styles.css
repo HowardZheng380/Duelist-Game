@@ -16,18 +16,150 @@ body {
   overflow: hidden;
 }
 
+body.title-screen {
+  background-color: #000000;
+  background-image: url("./assets/backgroundMainUI.png");
+}
+
+body.map-selection {
+  background-color: #0e0d13;
+  background-image: url("./assets/mapselectionback.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .title-logo {
   position: fixed;
   top: clamp(20px, 5vh, 56px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  width: min(62vw, 900px);
+  width: min(93vw, 1350px);
   max-width: calc(100vw - 32px);
   height: auto;
   display: block;
   pointer-events: none;
   user-select: none;
+}
+
+body.map-selection .title-logo,
+body.map-selection .start-prompt {
+  display: none;
+}
+
+.map-selection-ui {
+  display: none;
+}
+
+body.map-selection .map-selection-ui {
+  display: block;
+}
+
+.map-selection-title {
+  position: fixed;
+  top: calc(50% - 100px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(64vw, 1040px);
+  max-width: calc(100vw - 24px);
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 15;
+}
+
+.map-button {
+  position: fixed;
+  width: 430px;
+  height: 420px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  appearance: none;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.map-button-top-left {
+  top: calc(max(24px, 7vh) + 65px);
+  left: calc(max(24px, 5vw) + 20px);
+  height: 470px;
+}
+
+.map-button-top-right {
+  top: calc(max(24px, 7vh) + 65px);
+  right: calc(max(24px, 5vw) + 20px);
+  height: 470px;
+}
+
+.map-button-bottom-left {
+  bottom: calc(max(24px, 5vh) + 120px);
+  left: calc(max(24px, 5vw) + 20px);
+}
+
+.map-button-bottom-right {
+  right: calc(max(24px, 5vw) + 20px);
+  bottom: calc(max(24px, 5vh) + 120px);
+}
+
+.start-prompt {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(28px, 8vh, 96px);
+  transform: translateX(-50%);
+  width: min(96vw, 1500px);
+  aspect-ratio: 1024 / 168;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+}
+
+.prompt-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  animation: prompt-flicker 1s steps(1, end) infinite;
+}
+
+.frame-1 {
+  animation-delay: 0s;
+}
+
+.frame-2 {
+  animation-delay: -0.8s;
+}
+
+.frame-3 {
+  animation-delay: -0.6s;
+}
+
+.frame-4 {
+  animation-delay: -0.4s;
+}
+
+.frame-5 {
+  animation-delay: -0.2s;
+}
+
+@keyframes prompt-flicker {
+  0%,
+  20% {
+    opacity: 1;
+  }
+
+  20.01%,
+  100% {
+    opacity: 0;
+  }
 }
 
 #game {
@@ -38,4 +170,16 @@ body {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   background: transparent;
+}
+
+@media (max-width: 900px) {
+  .start-prompt {
+    width: min(96vw, 1500px);
+    bottom: clamp(24px, 6vh, 64px);
+  }
+
+  .map-button {
+    width: min(430px, 42vw);
+    height: min(420px, 42vw);
+  }
 }
