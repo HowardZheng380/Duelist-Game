@@ -4,7 +4,7 @@ A small browser-based prototype for a pixelated 2D fighting game.
 
 ## Play
 
-Open [`index.html`](http://127.0.0.1:5500/index.html) in a browser.
+Open https://howardzheng380.github.io/Duelist-Game/ in a browser.
 
 ## Controls
 
