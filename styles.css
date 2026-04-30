@@ -70,6 +70,21 @@ body.map-selection .map-selection-ui {
   z-index: 15;
 }
 
+.map-selection-subtitle {
+  position: fixed;
+  top: calc(50% - 5px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(36vw, 620px);
+  max-width: calc(100vw - 40px);
+  height: auto;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.75));
+  z-index: 16;
+}
+
 .map-button {
   position: fixed;
   width: 430px;
